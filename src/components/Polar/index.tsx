@@ -2795,7 +2795,6 @@ function filterByArgument(arr: any[], type?: string) {
 
 function filterByTimestamp(events: any[], timestamps: []) {
   var all: any = {};
-  // event types
   for (let timestamp of timestamps) {
     var arr = events.filter((event) => event.timestamp === timestamp);
     all[timestamp] = arr;
@@ -2839,7 +2838,7 @@ export const Polar = () => {
   }, []);
 
   var data = {
-    labels: Object.keys(datasObjects).map((el) => el.replaceAll("_", " ")),
+    labels: Object.keys(datasObjects),
     datasets: [
       {
         title: "any",
@@ -2866,13 +2865,11 @@ export const Polar = () => {
               borderRadius: 2,
             },
           },
-          // responsive: true,
           scales: {
             r: {
               min: 0,
               max: 10,
               pointLabels: {
-                // callback((label: any, _index) => label.substring(0, 7)),
                 backdropPadding: 100,
                 display: true,
                 font: { size: 13, family: "Dongle", weight: "bold" },
@@ -2887,8 +2884,6 @@ export const Polar = () => {
                 count: 2,
                 z: -10,
               },
-
-              // suggestedMin: -10,
             },
           },
 
@@ -2902,7 +2897,6 @@ export const Polar = () => {
             },
 
             legend: {
-              // display: false,
               position: "bottom",
               align: "start",
 
@@ -2922,7 +2916,6 @@ export const Polar = () => {
           maintainAspectRatio: false,
         }}
       />
-      {/* <CenterText>{Object.keys(eventsFilteredByTypeObject).length}</CenterText> */}
     </Container>
   );
 };

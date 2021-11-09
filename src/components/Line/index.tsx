@@ -2855,7 +2855,7 @@ export const LineChart = () => {
     <Container>
       <Line
         height={200}
-        width={800}
+        width={820}
         data={data}
         options={{
           maintainAspectRatio: true,
