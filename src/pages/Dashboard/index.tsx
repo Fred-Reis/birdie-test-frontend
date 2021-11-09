@@ -11,7 +11,7 @@ import { InfoCards } from "../../components/InfoCards";
 import { DoughnutChart } from "../../components/Doughnut";
 import { Polar } from "../../components/Polar";
 import { Table } from "../../components/Table";
-import { Line } from "../../components/Line";
+import { LineChart } from "../../components/Line";
 
 export const Dashboard = () => {
   return (
@@ -32,7 +32,7 @@ export const Dashboard = () => {
         </UserContainer>
       </Header>
 
-      <InfoCardsContainer>
+      {/* <InfoCardsContainer>
         <InfoCards
           type="events"
           event_type="regular_medication_not_taken"
@@ -41,7 +41,7 @@ export const Dashboard = () => {
         <InfoCards type="calm_day" value="2021-04-21" />
         <InfoCards type="critical_day" value="2021-04-21" />
         <InfoCards type="alerts" value="15" />
-      </InfoCardsContainer>
+      </InfoCardsContainer> */}
       <Content>
         <DataContainer>
           <TopHalfDataContainer>
@@ -50,7 +50,7 @@ export const Dashboard = () => {
             <Polar />
           </TopHalfDataContainer>
 
-          <Line />
+          <LineChart />
         </DataContainer>
 
         <Table />

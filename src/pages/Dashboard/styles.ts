@@ -66,4 +66,5 @@ export const DataContainer = styled.div`
 export const TopHalfDataContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 `;
