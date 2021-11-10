@@ -3,7 +3,9 @@ import { Doughnut } from "react-chartjs-2";
 import { lighten } from "polished";
 import { useEffect, useState } from "react";
 
-const mockEvent = [
+import { EventPropsDTO } from "../../types/eventPropsDTO";
+
+const mockEvent: EventPropsDTO[] = [
   {
     id: "00114a9f-00dc-4f39-a6ac-af1b7e0543e7",
     payload: {
@@ -2854,7 +2856,7 @@ export const DoughnutChart = () => {
   return (
     <Container>
       <Doughnut
-        height={450}
+        height={430}
         width={400}
         data={data}
         options={{
@@ -2871,7 +2873,6 @@ export const DoughnutChart = () => {
               },
             },
             legend: {
-              // display: false,
               position: "bottom",
               align: "start",
               labels: {
@@ -2884,7 +2885,7 @@ export const DoughnutChart = () => {
             },
           },
           layout: {
-            padding: 20,
+            padding: 10,
           },
 
           maintainAspectRatio: false,

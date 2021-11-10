@@ -1,9 +1,15 @@
 import { Container } from "./styles";
 import { Line } from "react-chartjs-2";
-import { lighten } from "polished";
-import { useEffect, useState } from "react";
 
-const mockEvent = [
+import { EventPropsDTO } from "../../types/eventPropsDTO";
+
+import {
+  filterByArgument,
+  filterByTimestamp,
+  sortDateObject,
+} from "../../utils/filterFunctions";
+
+const mockEvent: EventPropsDTO[] = [
   {
     id: "00114a9f-00dc-4f39-a6ac-af1b7e0543e7",
     payload: {
@@ -2789,20 +2795,6 @@ const mockEvent = [
   },
 ];
 
-function filterByArgument(arr: any[], type?: string) {
-  return arr.map((el: any) => el.payload).map((el) => (type ? el[type] : el));
-}
-
-function filterByTimestamp(events: any[], timestamps: []) {
-  var all: any = {};
-  // event types
-  for (let timestamp of timestamps) {
-    var arr = events.filter((event) => event.timestamp === timestamp);
-    all[timestamp] = arr;
-  }
-  return all;
-}
-
 var filteredDatas = filterByArgument([...mockEvent], "timestamp")
   .map((el) =>
     String(new Date(el.substring(0, 10)).toLocaleDateString("en-EN"))
@@ -2821,32 +2813,18 @@ var datasUpdated = [...mockEvent].map((el) => ({
 
 var datasObjects = filterByTimestamp(datasUpdated, filteredDatas);
 
+var dateObjSorted = sortDateObject(datasObjects);
+
 export const LineChart = () => {
-  const [colorArray, setColorArray] = useState<any[]>([]);
-
-  useEffect(() => {
-    setColorArray(
-      Object.values(datasObjects).map((el: any) =>
-        el.length >= 3 && el.length < 5
-          ? lighten(0.2, "#283F9C")
-          : el.length >= 5 && el.length < 7
-          ? "#df9502"
-          : el.length >= 7
-          ? lighten(0.1, "#ec3030")
-          : lighten(0.1, "#5AC5C1")
-      )
-    );
-  }, []);
-
+  // object to config chart data
   var data = {
-    labels: Object.keys(datasObjects).map((el) => el.replaceAll("_", " ")),
+    labels: Object.keys(dateObjSorted),
     datasets: [
       {
-        title: "any",
-        data: Object.values(datasObjects).map((el: any) => el.length),
-        fill: false,
-        // backgroundColor: colorArray.map((el) => lighten(0.2, el)),
-        // borderColor: colorArray.map((el) => lighten(0.1, el)),
+        label: "Timeline",
+        data: Object.values(dateObjSorted).map((el: any) => el.length),
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgba(255, 99, 132, 0.2)",
       },
     ],
   };
@@ -2854,14 +2832,36 @@ export const LineChart = () => {
   return (
     <Container>
       <Line
-        height={200}
+        height={140}
         width={820}
         data={data}
         options={{
+          responsive: true,
           maintainAspectRatio: true,
           scales: {
             y: {
               beginAtZero: true,
+            },
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: "Events by Date",
+              font: {
+                size: 20,
+              },
+            },
+
+            legend: {
+              position: "top",
+              align: "center",
+              labels: {
+                boxWidth: 10,
+                boxHeight: 10,
+                font: {
+                  size: 12,
+                },
+              },
             },
           },
         }}
