@@ -1,0 +1,21 @@
+// function to filter events arrays by any arguments return an array of PAYLOADS
+export function filterByArgument(arr: any[], type?: string) {
+  return arr.map((el: any) => el.payload).map((el) => (type ? el[type] : el));
+}
+
+// function to filter events arrays by timestamp return an object
+export function filterByTimestamp(events: any[], timestamps: []) {
+  var all: any = {};
+  for (let timestamp of timestamps) {
+    var arr = events.filter((event) => event.timestamp === timestamp);
+    all[timestamp] = arr;
+  }
+  return all;
+}
+
+// function to sort date objects
+export function sortDateObject(datasObjects: any[]) {
+  return Object.keys(datasObjects)
+    .sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+    .reduce((acc: any, el: any) => ((acc[el] = datasObjects[el]), acc), {});
+}

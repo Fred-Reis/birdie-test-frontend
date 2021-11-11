@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   display: flex;
-  height: 100vh;
+  max-height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px 20px 20px;
+  padding: 10px;
   /* background: var(--primary-blue); */
 `;
 
@@ -51,11 +51,11 @@ export const InfoCardsContainer = styled.div`
 
 export const Content = styled.section`
   height: 100%;
-  width: 100%;
-  margin-top: auto;
+  width: 80%;
+  margin: auto auto 0 0;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 export const DataContainer = styled.div`
