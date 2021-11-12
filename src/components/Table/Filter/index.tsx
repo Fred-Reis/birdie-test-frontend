@@ -6,9 +6,18 @@ import {
   HiddenCheckbox,
   StyledCheckbox,
   FilterModalList,
+  CloseButton,
 } from "./styles";
 
+import {
+  filterByArgument,
+  filterByCaregiver,
+  filterByEvent_types,
+} from "../../../utils/filterFunctions";
+
 import checkIcon from "../../../assets/icons/check-bold.svg";
+
+import { EventPropsDTO } from "../../../types/eventPropsDTO";
 
 export interface CheckBoxProps {
   checked: string;
@@ -34,36 +43,43 @@ const Checkbox = ({ checked, value, onclick }: CheckBoxProps) => (
   </CheckboxContainer>
 );
 
-const dateArr = [
-  "4/22/2019",
-  "4/23/2019",
-  "4/24/2019",
-  "4/25/2019",
-  "4/26/2019",
-  "4/27/2019",
-  "4/28/2019",
-  "4/29/2019",
-  "4/30/2019",
-  "5/1/2019",
-  "5/2/2019",
-  "5/3/2019",
-  "5/4/2019",
-  "5/5/2019",
-  "5/6/2019",
-  "5/7/2019",
-  "5/8/2019",
-  "5/9/2019",
-  "5/10/2019",
-  "5/11/2019",
-];
-
-export const Filter = () => {
+export const Filter = (props: {
+  events: EventPropsDTO[];
+  setEventList: (any: EventPropsDTO[]) => void;
+}) => {
+  const { events, setEventList } = props;
   const [filterBy, setFilterBy] = useState("");
   const [visible, setVisible] = useState(false);
 
-  function handleCheckboxChange(type: string) {
+  function handleCheckboxChange(type: any) {
     setFilterBy(type);
   }
+
+  var filteredEvents: any = filterByArgument([...events], "event_type").reduce(
+    function (a, b) {
+      if (a.indexOf(b) < 0) a.push(b);
+      return a;
+    },
+    []
+  );
+
+  const filteredCaregivers: any = filterByArgument(
+    [...events],
+    "caregiver_id"
+  ).reduce(function (a, b) {
+    if (a.indexOf(b) < 0) a.push(b);
+    return a;
+  }, []);
+
+  const objects: any = {
+    "Caregiver id": filterByCaregiver([...events], filteredCaregivers), // filtered object by date
+    "Event type": filterByEvent_types([...events], filteredEvents), // filtered object by event_type
+  };
+
+  const handleFilter = (value: string) => {
+    setEventList(objects[filterBy][value]);
+    setVisible(!visible);
+  };
 
   return (
     <Container>
@@ -74,13 +90,26 @@ export const Filter = () => {
           "Filter By"
         )}
       </Select>
-      {visible && filterBy && (
-        <FilterModalList>
-          {dateArr.map((el) => (
-            <li onClick={() => setVisible(!visible)}>{el}</li>
-          ))}
-        </FilterModalList>
-      )}
+      {visible &&
+        (filterBy === "Caregiver id" ? (
+          <FilterModalList>
+            <CloseButton onClick={() => setVisible(!visible)}>x</CloseButton>
+            {filteredCaregivers.map((el: any, idx: any) => (
+              <li id={String(idx)} onClick={() => handleFilter(el)}>
+                {el}
+              </li>
+            ))}
+          </FilterModalList>
+        ) : filterBy === "Event type" ? (
+          <FilterModalList>
+            <CloseButton onClick={() => setVisible(!visible)}>x</CloseButton>
+            {filteredEvents.map((el: any, idx: any) => (
+              <li id={String(idx)} onClick={() => handleFilter(el)}>
+                {el.replaceAll("_", " ")}
+              </li>
+            ))}
+          </FilterModalList>
+        ) : null)}
 
       <Checkbox
         value="Event type"

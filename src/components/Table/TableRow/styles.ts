@@ -18,7 +18,6 @@ export const Itemcontainer = styled.li<EventProps>`
   border: 2px solid var(--primary-green);
   font-size: 20px;
   padding-right: 15px;
-  /* transition: background 0.3; */
 
   :hover {
     background: ${({ event_type }) =>

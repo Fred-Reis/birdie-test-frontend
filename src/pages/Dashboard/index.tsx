@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Container,
   Header,
@@ -11,6 +13,7 @@ import { InfoCards } from "../../components/InfoCards";
 import { DoughnutChart } from "../../components/Doughnut";
 import { Table } from "../../components/Table";
 import { LineChart } from "../../components/Line";
+import { Modal } from "../../components/Modal";
 
 import { EventPropsDTO } from "../../types/eventPropsDTO";
 
@@ -2801,12 +2804,25 @@ const mockEvent: EventPropsDTO[] = [
 ];
 
 export const Dashboard = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [id, setId] = useState("");
+
+  const openModal = (event_id?: any) => {
+    setShowModal((prev) => !prev);
+    if (event_id) setId(event_id);
+  };
   return (
     <Container>
+      <Modal
+        events={mockEvent}
+        event_id={id}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
       <Header>
         <h1>Recipient Care Dashboard</h1>
 
-        <UserContainer>
+        <UserContainer onClick={openModal}>
           <div>
             <p>John Doo</p>
             <p>johndoo@email.com</p>
@@ -2832,13 +2848,13 @@ export const Dashboard = () => {
       <Content>
         <DataContainer>
           <TopHalfDataContainer>
-            <DoughnutChart />
+            <DoughnutChart events={mockEvent} />
 
             {/* <Polar /> */}
-            <Table events={mockEvent} setEvents={() => {}} />
+            <Table events={mockEvent} setId={openModal} />
           </TopHalfDataContainer>
         </DataContainer>
-        <LineChart />
+        <LineChart events={mockEvent} />
       </Content>
     </Container>
   );

@@ -30,7 +30,8 @@ export const Container = styled.div`
       background: var(--light-yellow);
       border: 2px solid var(--primary-green);
       border-radius: 4px;
-      padding: 0 10px;
+      width: 80px;
+      margin-right: 10px;
 
       color: var(--primary-green);
       font-size: 18px;

@@ -3,12 +3,33 @@ export function filterByArgument(arr: any[], type?: string) {
   return arr.map((el: any) => el.payload).map((el) => (type ? el[type] : el));
 }
 
+// function to filter events array by event type return an object
+export function filterByEvent_types(events: any[], types: string[]) {
+  var all: any = {};
+  // event types
+  for (let type of types) {
+    var arr = events.filter((event) => event.event_type === type);
+    all[type] = arr;
+  }
+  return all;
+}
+
 // function to filter events arrays by timestamp return an object
-export function filterByTimestamp(events: any[], timestamps: []) {
+export function filterByTimestamp(events: any[], timestamps: string[]) {
   var all: any = {};
   for (let timestamp of timestamps) {
     var arr = events.filter((event) => event.timestamp === timestamp);
     all[timestamp] = arr;
+  }
+  return all;
+}
+
+// function to filter by creagiver id return an object
+export function filterByCaregiver(events: any[], caregivers: string[]) {
+  var all: any = {};
+  for (let caregiver of caregivers) {
+    var arr = events.filter((event) => event.caregiver_id === caregiver);
+    all[caregiver] = arr;
   }
   return all;
 }

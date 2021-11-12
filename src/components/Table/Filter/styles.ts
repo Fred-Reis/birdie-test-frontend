@@ -17,7 +17,6 @@ export const Select = styled.div`
   border-radius: 4px;
   padding: 0 10px;
   margin-right: 10px;
-
   color: var(--primary-green);
   font-size: 18px;
   transition: background 0.3 ease-in-out;
@@ -65,7 +64,7 @@ export const FilterModalList = styled.ul`
   background: var(--light-yellow);
   border: 2px solid var(--primary-green);
   border-radius: 4px;
-  padding: 0 10px;
+  padding: 10px 40px 0 10px;
   margin-right: 10px;
   height: 200px;
   min-width: 160px;
@@ -83,4 +82,21 @@ export const FilterModalList = styled.ul`
       background: var(--light-green);
     }
   }
+`;
+
+export const CloseButton = styled.span`
+  position: fixed;
+  right: 22%;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--light-green);
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
 `;
