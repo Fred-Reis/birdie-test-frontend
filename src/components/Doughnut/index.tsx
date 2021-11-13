@@ -1,7 +1,6 @@
 import { Container, CenterText } from "./styles";
 import { Doughnut } from "react-chartjs-2";
 import { lighten } from "polished";
-import { useEffect, useState } from "react";
 
 import { EventPropsDTO } from "../../types/eventPropsDTO";
 import {
