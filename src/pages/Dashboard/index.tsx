@@ -22,12 +22,7 @@ import {
 } from "../../utils/filterFunctions";
 import { Button } from "../../components/Button";
 import { useStore } from "../../storage/events.storage";
-import { DoughnutSkeleton } from "../../components/skeleton/DoughnutSkeleton";
-import { TableSkeleton } from "../../components/skeleton/TableSkeleton";
-import { LineSkeleton } from "../../components/skeleton/LineSkeleton";
-import { ProfileCardSkeleton } from "../../components/skeleton/ProfileCardSkeleton";
-import { InfoCardSkeleton } from "../../components/skeleton/InfoCardSkeleton";
-import { DashboardHeaderSkeleton } from "../../components/skeleton/DashboardHeaderSkeleton";
+import { Skeleton } from "../../components/Skeleton";
 
 export const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -65,7 +60,7 @@ export const Dashboard = () => {
   }, [requestCounter, setEvents]);
 
   useEffect(() => {
-    fetch("https://randomuser.me/api/?nat=gb")
+    fetch("https://randomuser.me/api/")
       .then((user) => user.json())
       .then((user) => setUser(user.results[0]));
   }, []);
@@ -113,30 +108,7 @@ export const Dashboard = () => {
         setShowModal={setShowModal}
       />
       {loading ? (
-        <Container>
-          <Header>
-            <DashboardHeaderSkeleton styles={{ width: "100%" }} />
-          </Header>
-
-          <div style={{ display: "flex", width: "100%" }}>
-            <Content>
-              <div>
-                <TopHalfDataContainer>
-                  <DoughnutSkeleton />
-
-                  <TableSkeleton styles={{ width: "100%" }} />
-                </TopHalfDataContainer>
-              </div>
-              <LineSkeleton style={{ width: "100%" }} />
-            </Content>
-            <InfoCardsContainer>
-              <ProfileCardSkeleton style={{ width: "100%" }} />
-
-              <InfoCardSkeleton style={{ width: "100%", margin: "auto" }} />
-              <InfoCardSkeleton style={{ width: "100%", margin: "auto" }} />
-            </InfoCardsContainer>
-          </div>
-        </Container>
+        <Skeleton />
       ) : (
         <Container>
           <Header>
