@@ -34,5 +34,6 @@ export const Container = styled.div`
     color: var(--primary-blue);
     font-size: 1.4rem;
     line-height: 23px;
+    line-break: anywhere;
   }
 `;

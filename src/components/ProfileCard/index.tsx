@@ -11,7 +11,7 @@ export const ProfileCard = (props: {
       <h2>Care Recipient</h2>
       <img src={user.picture.medium} alt="profile" />
 
-      <div>
+      <div style={{ width: "100%" }}>
         <h3>Name:</h3>
         <p>
           {user.name.last}, {user.name.first}
