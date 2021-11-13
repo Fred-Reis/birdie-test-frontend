@@ -4,8 +4,8 @@ export const DashboardHeaderSkeleton = (props: any) => (
   <ContentLoader
     speed={3}
     width={2200}
-    height={80}
-    viewBox="0 0 2200 80"
+    height={60}
+    viewBox="0 0 2200 60"
     backgroundColor="#f0ebeb"
     foregroundColor="#bdbdbd"
     {...props}

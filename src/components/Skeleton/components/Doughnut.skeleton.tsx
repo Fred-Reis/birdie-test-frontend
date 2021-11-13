@@ -4,8 +4,8 @@ export const DoughnutSkeleton = (props: any) => (
   <ContentLoader
     speed={3}
     width={400}
-    height={488}
-    viewBox="0 0 400 488"
+    height={450}
+    viewBox="0 0 400 450"
     backgroundColor="#f0ebeb"
     foregroundColor="#bdbdbd"
     {...props}
