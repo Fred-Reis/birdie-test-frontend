@@ -9,9 +9,55 @@ import {
   filterByEvent_types,
 } from "../../utils/filterFunctions";
 
+const COLOR_ARRAY = [
+  "#FF6633",
+  "#FFB399",
+  "#FF33FF",
+  "#FFFF99",
+  "#00B3E6",
+  "#E6B333",
+  "#3366E6",
+  "#B34D4D",
+  "#809900",
+  "#FF1A66",
+  "#6666FF",
+  "#66991A",
+  "#FF99E6",
+  "#CCFF1A",
+  "#6680B3",
+  "#33FFCC",
+  "#66994D",
+  "#B366CC",
+  "#4D8000",
+  "#B33300",
+  "#66664D",
+  "#991AFF",
+  "#E666FF",
+  "#4DB3FF",
+  "#1AB399",
+  "#E666B3",
+  "#33991A",
+  "#CC9999",
+  "#B3B31A",
+  "#00E680",
+  "#4D8066",
+  "#809980",
+  "#E6FF80",
+  "#1AFF33",
+  "#999933",
+  "#FF3380",
+  "#CCCC00",
+  "#66E64D",
+  "#4D80CC",
+  "#9900B3",
+  "#E64D66",
+  "#4DB380",
+  "#FF4D4D",
+  "#99E6E6",
+];
+
 export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
   const { events } = props;
-  const [colorArray, setColorArray] = useState<any[]>([]);
 
   var reducedEventTypes = filterByArgument([...events], "event_type").reduce(
     function (a, b) {
@@ -26,19 +72,6 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
     reducedEventTypes
   );
 
-  useEffect(() => {
-    setColorArray(
-      Object.keys(eventsFilteredByTypeObject).map(
-        (_el) =>
-          "#" +
-          (
-            "f0000" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16)
-          ).slice(-6)
-      )
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   var data = {
     labels: Object.keys(eventsFilteredByTypeObject).map((el) =>
       el.replaceAll("_", " ")
@@ -49,8 +82,8 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
         data: Object.values(eventsFilteredByTypeObject).map(
           (el: any) => el.length
         ),
-        backgroundColor: colorArray.map((el) => lighten(0.2, el)),
-        borderColor: colorArray.map((el) => lighten(0.15, el)),
+        backgroundColor: COLOR_ARRAY.map((el) => lighten(0.1, el)),
+        borderColor: COLOR_ARRAY.map((el) => lighten(0.05, el)),
         borderWidth: 1,
         hoverOffset: 10,
       },
@@ -95,6 +128,7 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
           maintainAspectRatio: false,
         }}
       />
+
       <CenterText>{Object.keys(eventsFilteredByTypeObject).length}</CenterText>
     </Container>
   );
