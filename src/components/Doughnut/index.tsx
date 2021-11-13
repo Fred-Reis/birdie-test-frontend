@@ -55,6 +55,8 @@ const COLOR_ARRAY = [
   "#99E6E6",
 ];
 
+const BORDER_ARRAY = COLOR_ARRAY;
+
 export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
   const { events } = props;
 
@@ -81,8 +83,8 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
         data: Object.values(eventsFilteredByTypeObject).map(
           (el: any) => el.length
         ),
-        backgroundColor: COLOR_ARRAY.map((el) => lighten(0.1, el)),
-        borderColor: COLOR_ARRAY.map((el) => lighten(0.05, el)),
+        backgroundColor: COLOR_ARRAY,
+        borderColor: BORDER_ARRAY,
         borderWidth: 1,
         hoverOffset: 10,
       },
@@ -105,7 +107,7 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
               display: true,
               text: "Events by Types",
               font: {
-                size: 20,
+                size: 18,
               },
             },
             legend: {
@@ -115,7 +117,7 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
                 boxWidth: 10,
                 boxHeight: 10,
                 font: {
-                  size: 12,
+                  size: 11,
                 },
               },
             },
