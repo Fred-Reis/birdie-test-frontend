@@ -92,7 +92,7 @@ export const Modal = (props: {
                 {event.note && (
                   <div>
                     <label>notes:</label>
-                    <p>{event.note}</p>
+                    <p>{event.note.replaceAll("[redacted]", " ")}</p>
                   </div>
                 )}
 

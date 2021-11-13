@@ -6,6 +6,7 @@ import { EventPropsDTO } from "../../types/eventPropsDTO";
 
 import { TableRow } from "./TableRow";
 import { Filter } from "./Filter";
+import { Button } from "../Button";
 
 // function to sort events by timestamp
 const sortEvents = (arr: EventPropsDTO[], by: string) => {
@@ -41,10 +42,11 @@ export const Table = (props: { events: EventPropsDTO[]; setId: any }) => {
     <Container>
       <div>
         <div>
-          <button onClick={handleSortEvents}>{sortBy}</button>
-          <button onClick={() => setEventList(eventListRef.current)}>
-            clear filters
-          </button>
+          <Button title={sortBy} onclick={handleSortEvents} />
+          <Button
+            title="clear filters"
+            onclick={() => setEventList(eventListRef.current)}
+          />
         </div>
         <h1>Events</h1>
         <div>
@@ -60,7 +62,7 @@ export const Table = (props: { events: EventPropsDTO[]; setId: any }) => {
 
       <ListContainer>
         {eventList.map((item: any) => (
-          <TableRow id={item.id} item={item} setId={setId} />
+          <TableRow key={item.id} item={item} setId={setId} />
         ))}
       </ListContainer>
     </Container>

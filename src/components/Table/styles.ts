@@ -1,7 +1,7 @@
-import { darken } from "polished";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.ul`
+  scroll-behavior: smooth;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -26,31 +26,15 @@ export const Container = styled.div`
     justify-content: space-between;
     padding: 0 10px;
 
-    button {
-      background: var(--light-yellow);
-      border: 2px solid var(--primary-green);
-      border-radius: 4px;
-      width: 80px;
-      margin-right: 10px;
-
-      color: var(--primary-green);
-      font-size: 18px;
-      transition: background 0.3 ease-in-out;
-
-      :hover {
-        background: ${darken(0.2, "#FDF8D1")};
-      }
-    }
-
     p {
-      font-size: 18px;
+      font-size: 1.2rem;
     }
   }
 
   h1 {
     text-align: center;
     font-family: sans-serif;
-    font-size: 23px;
+    font-size: 1.4rem;
     color: #777;
   }
 `;
@@ -59,7 +43,6 @@ export const ListContainer = styled.ul`
   list-style: none;
   overflow: scroll;
   height: 380px;
-  /* background: #444; */
   border-radius: 0 0 10px 10px;
   padding: 10px 0;
 `;

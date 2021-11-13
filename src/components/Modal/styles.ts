@@ -10,6 +10,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 99999;
+  padding: 150px;
 `;
 
 export const ModalWrapper = styled.div`
@@ -19,7 +20,7 @@ export const ModalWrapper = styled.div`
   position: relative;
   z-index: 99999;
   border-radius: 10px;
-  margin: 100px;
+  /* margin: 100px; */
 `;
 
 export const ModalContent = styled.div`
@@ -30,7 +31,7 @@ export const ModalContent = styled.div`
   padding: 30px;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   color: var(--primary-blue);
   border: 2px solid var(--primary-green);
@@ -44,13 +45,12 @@ export const ModalContent = styled.div`
   }
 
   label {
-    margin: 0;
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 1.3rem;
+    margin-right: 30px;
   }
 
   p {
-    font-size: 25px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     font-weight: bold;
   }

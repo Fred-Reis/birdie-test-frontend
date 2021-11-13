@@ -1,4 +1,4 @@
-import { Container, TitleContainer } from "./styles";
+import { Container, TitleContainer, BodyMessage } from "./styles";
 
 import recurrent from "../../assets/icons/recurrent.svg";
 import best from "../../assets/icons/best.svg";
@@ -30,29 +30,24 @@ const cardsValues = {
   },
 };
 
-export const InfoCards = ({
-  type,
-  value,
-  event_type,
-  ...rest
-}: InfoCardsProps) => {
+export const InfoCards = ({ type, value, event_type }: InfoCardsProps) => {
   return (
-    <Container type={type} {...rest}>
+    <Container type={type}>
       <TitleContainer>
         <p>{cardsValues[type].title}</p>
         <img src={cardsValues[type].icon} alt="icon" />
       </TitleContainer>
 
-      <div style={{ marginTop: "auto" }}>
+      <BodyMessage>
         {event_type ? (
-          <div style={{ width: "90%" }}>
+          <div>
             <h3>{event_type.replaceAll("_", " ")}</h3>
             <p>{value} events </p>
           </div>
         ) : (
           <h3>{value}</h3>
         )}
-      </div>
+      </BodyMessage>
     </Container>
   );
 };

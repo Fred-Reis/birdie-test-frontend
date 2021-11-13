@@ -1,4 +1,4 @@
-import { darken, lighten } from "polished";
+import { lighten } from "polished";
 import styled from "styled-components";
 
 interface CheckBoxProps {
@@ -9,21 +9,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const Select = styled.div`
-  background: var(--light-yellow);
-  border: 2px solid var(--primary-green);
-  border-radius: 4px;
-  padding: 0 10px;
-  margin-right: 10px;
-  color: var(--primary-green);
-  font-size: 18px;
-  transition: background 0.3 ease-in-out;
-
-  :hover {
-    background: ${darken(0.2, "#FDF8D1")};
-  }
 `;
 
 export const CheckboxContainer = styled.div<CheckBoxProps>`
@@ -64,16 +49,16 @@ export const FilterModalList = styled.ul`
   background: var(--light-yellow);
   border: 2px solid var(--primary-green);
   border-radius: 4px;
-  padding: 10px 40px 0 10px;
+  padding: 10px 40px 10px 10px;
   margin-right: 10px;
-  height: 200px;
+  max-height: 200px;
   min-width: 160px;
   text-align: center;
   right: 0;
   top: 10px;
   overflow: scroll;
   list-style: none;
-  font-size: 18px;
+  font-size: 1.2rem;
 
   color: var(--primary-green);
 
@@ -86,7 +71,7 @@ export const FilterModalList = styled.ul`
 
 export const CloseButton = styled.span`
   position: fixed;
-  right: 22%;
+  right: 21%;
   width: 20px;
   height: 20px;
   border-radius: 4px;
@@ -97,6 +82,6 @@ export const CloseButton = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 1.4rem;
   font-weight: bold;
 `;

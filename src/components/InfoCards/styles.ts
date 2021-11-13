@@ -1,17 +1,17 @@
 import styled from "styled-components/";
-// import { lighten } from "polished";
 
 interface InfoCardsProps {
   type: "events" | "calm_day" | "critical_day" | "alerts";
 }
 
 export const Container = styled.div<InfoCardsProps>`
-  flex: 1;
   padding: 20px;
-  height: 120px;
   border-radius: 10px;
-  max-width: 22%;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 
   div {
     display: flex;
@@ -20,7 +20,7 @@ export const Container = styled.div<InfoCardsProps>`
   }
 
   h3 {
-    color: var(--primary-green);
+    color: ${({ type }) => (type === "alerts" ? "#ec3030" : "#5AC5C1")};
     font-size: 2rem;
     line-height: 20px;
   }
@@ -33,11 +33,10 @@ export const Container = styled.div<InfoCardsProps>`
 `;
 
 export const TitleContainer = styled.div`
-  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
 
   p {
     color: var(--primary-blue);
@@ -48,5 +47,20 @@ export const TitleContainer = styled.div`
 
   img {
     width: 30px;
+  }
+`;
+
+export const BodyMessage = styled.div`
+  margin-top: auto;
+
+  flex: 1;
+  display: flex;
+
+  div {
+    flex: 1;
+
+    h3 {
+      margin-right: 5px;
+    }
   }
 `;

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Container,
-  Select,
   CheckboxContainer,
   HiddenCheckbox,
   StyledCheckbox,
@@ -18,6 +17,7 @@ import {
 import checkIcon from "../../../assets/icons/check-bold.svg";
 
 import { EventPropsDTO } from "../../../types/eventPropsDTO";
+import { Button } from "../../Button";
 
 export interface CheckBoxProps {
   checked: string;
@@ -83,13 +83,16 @@ export const Filter = (props: {
 
   return (
     <Container>
-      <Select onClick={() => setVisible(!visible)}>
-        {visible && !filterBy ? (
-          <span style={{ color: "#ec3030ab" }}>Select filter Type first</span>
-        ) : (
-          "Filter By"
-        )}
-      </Select>
+      <Button
+        title={
+          visible && !filterBy ? (
+            <span style={{ color: "#ec3030ab" }}>Select filter Type first</span>
+          ) : (
+            "Filter By"
+          )
+        }
+        onclick={() => setVisible(!visible)}
+      ></Button>
       {visible &&
         (filterBy === "Caregiver id" ? (
           <FilterModalList>

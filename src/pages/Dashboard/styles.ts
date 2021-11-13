@@ -2,51 +2,42 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   display: flex;
+  flex: 1;
   max-height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 0 10px 30px;
   /* background: var(--primary-blue); */
 `;
 
-export const Header = styled.header`
+export const Header = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 300px;
+  padding: 10px 50px 10px 10px;
   flex: 1;
   width: 100%;
   color: var(--primary-blue);
-`;
 
-export const UserContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 5px;
-  margin-left: auto;
-
-  p {
-    font-size: 1.3rem;
-    line-height: 16px;
-    text-align: end;
-  }
-
-  img {
-    margin-left: 10px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 0 #000;
+  h1 {
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+    margin: auto;
   }
 `;
 
 export const InfoCardsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 export const Content = styled.section`
@@ -56,11 +47,6 @@ export const Content = styled.section`
 
   display: flex;
   flex-direction: column;
-`;
-
-export const DataContainer = styled.div`
-  /* display: flex;
-  flex-direction: row; */
 `;
 
 export const TopHalfDataContainer = styled.div`

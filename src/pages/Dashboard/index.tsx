@@ -3,19 +3,24 @@ import { useState } from "react";
 import {
   Container,
   Header,
-  UserContainer,
   Content,
   InfoCardsContainer,
-  DataContainer,
   TopHalfDataContainer,
 } from "./styles";
 import { InfoCards } from "../../components/InfoCards";
 import { DoughnutChart } from "../../components/Doughnut";
 import { Table } from "../../components/Table";
 import { LineChart } from "../../components/Line";
+import { ProfileCard } from "../../components/ProfileCard";
+
 import { Modal } from "../../components/Modal";
 
 import { EventPropsDTO } from "../../types/eventPropsDTO";
+import {
+  filterByArgument,
+  filterByEvent_types,
+} from "../../utils/filterFunctions";
+import { Button } from "../../components/Button";
 
 const mockEvent: EventPropsDTO[] = [
   {
@@ -2807,55 +2812,87 @@ export const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [id, setId] = useState("");
 
-  const openModal = (event_id?: any) => {
+  const recipient_id = [...mockEvent][0].care_recipient_id;
+
+  // all event types array
+  var filteredEvents = filterByArgument([...mockEvent], "event_type").reduce(
+    function (a, b) {
+      if (a.indexOf(b) < 0) a.push(b);
+      return a;
+    },
+    []
+  );
+
+  var eventsObject = filterByEvent_types([...mockEvent], filteredEvents);
+
+  const mostRecurrentEvent: any = Object.entries(eventsObject).sort(
+    (a: any, b: any) => a[1].length - b[1].length
+  )[Object.entries(eventsObject).length - 1];
+
+  // function to open/close events modal at table
+  const toggleModal = (event_id?: any) => {
     setShowModal((prev) => !prev);
     if (event_id) setId(event_id);
   };
+
+  // all dates sorted array
+  const datesSorted = filterByArgument([...mockEvent], "timestamp")
+    .map((el) =>
+      String(new Date(el.substring(0, 10)).toLocaleDateString("en-EN"))
+    )
+    .reduce(function (a: any, b) {
+      if (a.indexOf(b) < 0) a.push(b);
+      return a;
+    }, [])
+    .sort((a: any, b: any) => new Date(a).getTime() - new Date(b).getTime());
+
   return (
-    <Container>
+    <>
       <Modal
         events={mockEvent}
         event_id={id}
         showModal={showModal}
         setShowModal={setShowModal}
       />
-      <Header>
-        <h1>Recipient Care Dashboard</h1>
-
-        <UserContainer onClick={openModal}>
+      <Container>
+        <Header>
           <div>
-            <p>John Doo</p>
-            <p>johndoo@email.com</p>
+            <Button title="<< 100 events" onclick={() => {}}></Button>
+            <Button title=">> 100 events" onclick={() => {}}></Button>
           </div>
+          <h1>Care Recipient Dashboard</h1>
 
-          <img
-            src="https://gravatar.com/avatar/53a0d88e74ac2796506043ccfc9040de?s=400&d=robohash&r=x"
-            alt=""
-          />
-        </UserContainer>
-      </Header>
+          <h2>
+            Period: {datesSorted[0]} - {datesSorted[datesSorted.length - 1]}
+          </h2>
+        </Header>
 
-      {/* <InfoCardsContainer>
-        <InfoCards
-          type="events"
-          event_type="regular_medication_not_taken"
-          value="20"
-        />
-        <InfoCards type="calm_day" value="2021-04-21" />
-        <InfoCards type="critical_day" value="2021-04-21" />
-        <InfoCards type="alerts" value="15" />
-      </InfoCardsContainer> */}
-      <Content>
-        <DataContainer>
-          <TopHalfDataContainer>
-            <DoughnutChart events={mockEvent} />
+        <div style={{ display: "flex", width: "100%" }}>
+          <Content>
+            <div>
+              <TopHalfDataContainer>
+                <DoughnutChart events={mockEvent} />
 
-            {/* <Polar /> */}
-            <Table events={mockEvent} setId={openModal} />
-          </TopHalfDataContainer>
-        </DataContainer>
-        <LineChart events={mockEvent} />
-      </Content>
-    </Container>
+                {/* <Polar /> */}
+                <Table events={mockEvent} setId={toggleModal} />
+              </TopHalfDataContainer>
+            </div>
+            <LineChart events={mockEvent} />
+          </Content>
+          <InfoCardsContainer>
+            <ProfileCard care_recipient_id={recipient_id} />
+            <InfoCards
+              type="events"
+              event_type={mostRecurrentEvent[0]}
+              value={mostRecurrentEvent[1].length}
+            />
+            <InfoCards
+              type="alerts"
+              value={eventsObject["alert_raised"].length}
+            />
+          </InfoCardsContainer>
+        </div>
+      </Container>
+    </>
   );
 };

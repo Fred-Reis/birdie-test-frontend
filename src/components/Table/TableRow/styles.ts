@@ -16,7 +16,7 @@ export const Itemcontainer = styled.li<EventProps>`
   color: ${({ event_type }) =>
     event_type === "alert_raised" ? "#fff" : "#777"};
   border: 2px solid var(--primary-green);
-  font-size: 20px;
+  font-size: 1.3rem;
   padding-right: 15px;
 
   :hover {
@@ -36,6 +36,7 @@ export const DateContainer = styled.div`
   background: var(--light-yellow);
   align-items: center;
   justify-content: space-between;
+  border-radius: 5px 0 0 5px;
 
   img {
     height: 15px;

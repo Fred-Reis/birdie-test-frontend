@@ -6,8 +6,8 @@ import calendar from "../../../assets/icons/calendar.svg";
 
 export const TableRow = (props: {
   item: EventPropsDTO;
-  id: string;
   setId: any;
+  key: any;
 }) => {
   const { timestamp, event_type, caregiver_id, id } = props.item;
   const { setId } = props;
