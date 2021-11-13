@@ -45,7 +45,7 @@ export const InfoCards = ({ type, value, event_type }: InfoCardsProps) => {
             <p>{value} events </p>
           </div>
         ) : (
-          <h3>{value}</h3>
+          <h3>{value ? value : "0"}</h3>
         )}
       </BodyMessage>
     </Container>

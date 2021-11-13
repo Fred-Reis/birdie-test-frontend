@@ -29,6 +29,7 @@ export const Header = styled.div`
     right: 0;
     left: 0;
     margin: auto;
+    z-index: -1;
   }
 `;
 

@@ -12,9 +12,8 @@ export const Container = styled.div`
 export const CenterText = styled.span`
   position: absolute;
   width: 100%;
-  top: 35.5%;
+  top: 10.3rem;
   text-align: center;
-  /* margin-top: 20px; */
-  line-height: 20px;
+  line-height: 1.5rem;
   font-size: 5rem;
 `;

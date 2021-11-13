@@ -36,7 +36,7 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
           ).slice(-6)
       )
     );
-  }, []);
+  }, [eventsFilteredByTypeObject]);
 
   var data = {
     labels: Object.keys(eventsFilteredByTypeObject).map((el) =>

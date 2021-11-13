@@ -1,21 +1,24 @@
 import { Container } from "./styles";
 
-export const ProfileCard = (props: { care_recipient_id: string }) => {
-  const { care_recipient_id } = props;
+export const ProfileCard = (props: {
+  care_recipient_id: string;
+  user: any;
+}) => {
+  const { care_recipient_id, user } = props;
+
   return (
     <Container>
       <h2>Care Recipient</h2>
-      <img
-        src="https://gravatar.com/avatar/51a0d88e74ac2796506043ccfc9940de?s=400&d=robohash&r=x"
-        alt=""
-      />
+      <img src={user.picture.medium} alt="profile" />
 
       <div>
         <h3>Name:</h3>
-        <p>John Doo</p>
+        <p>
+          {user.name.last}, {user.name.first}
+        </p>
 
         <h3>Email:</h3>
-        <p>johndoo@email.com</p>
+        <p>{user.email}</p>
 
         <h3>Care recipient id:</h3>
         <p>{care_recipient_id}</p>
