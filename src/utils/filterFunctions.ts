@@ -37,6 +37,6 @@ export function filterByCaregiver(events: any[], caregivers: string[]) {
 // function to sort date objects
 export function sortDateObject(datasObjects: any[]) {
   return Object.keys(datasObjects)
-    .sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+    .sort((a: any, b: any) => new Date(a).getTime() - new Date(b).getTime())
     .reduce((acc: any, el: any) => ((acc[el] = datasObjects[el]), acc), {});
 }

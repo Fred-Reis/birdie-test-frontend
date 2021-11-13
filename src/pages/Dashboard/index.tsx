@@ -62,7 +62,7 @@ export const Dashboard = () => {
       setStateEvents(orders.data);
       setLoading(false);
     });
-  }, [requestCounter]);
+  }, [requestCounter, setEvents]);
 
   useEffect(() => {
     fetch("https://randomuser.me/api/?nat=gb")
