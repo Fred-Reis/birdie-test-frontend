@@ -36,7 +36,8 @@ export const DoughnutChart = (props: { events: EventPropsDTO[] }) => {
           ).slice(-6)
       )
     );
-  }, [eventsFilteredByTypeObject]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   var data = {
     labels: Object.keys(eventsFilteredByTypeObject).map((el) =>
