@@ -7,22 +7,25 @@ import {
   InfoCardsContainer,
   TopHalfDataContainer,
 } from "./styles";
-import { InfoCards } from "../../components/InfoCards";
-import { DoughnutChart } from "../../components/Doughnut";
-import { Table } from "../../components/Table";
-import { LineChart } from "../../components/Line";
-import { ProfileCard } from "../../components/ProfileCard";
 
+import { DoughnutChart } from "../../components/dataComponents/Doughnut";
+import { LineChart } from "../../components/dataComponents/Line";
+import { Table } from "../../components/dataComponents/Table";
+import { ProfileCard } from "../../components/ProfileCard";
+import { InfoCards } from "../../components/InfoCards";
+import { Skeleton } from "../../components/Skeleton";
+
+import { Button } from "../../components/Button";
 import { Modal } from "../../components/Modal";
 
-import { EventPropsDTO } from "../../types/eventPropsDTO";
+import { useStore } from "../../storage/events.storage";
+
 import {
   filterByArgument,
   filterByEvent_types,
 } from "../../utils/filterFunctions";
-import { Button } from "../../components/Button";
-import { useStore } from "../../storage/events.storage";
-import { Skeleton } from "../../components/Skeleton";
+
+import { EventPropsDTO } from "../../types/eventPropsDTO";
 
 export const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -30,18 +33,7 @@ export const Dashboard = () => {
   const [events, setStateEvents] = useState<EventPropsDTO[]>([]);
   const [requestCounter, setRequestCounter] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({
-    user: {
-      name: {
-        first: "John",
-        last: "Doo",
-      },
-      email: "johndoo@email.com",
-      picture: {
-        medium: "https://randomuser.me/api/portraits/med/men/63.jpg",
-      },
-    },
-  });
+  const [user, setUser] = useState({});
 
   const setEvents = useStore((state) => state.setEvents);
 
@@ -59,6 +51,7 @@ export const Dashboard = () => {
     });
   }, [requestCounter, setEvents]);
 
+  // effect to generate a random user every time app is loaded
   useEffect(() => {
     fetch("https://randomuser.me/api/")
       .then((user) => user.json())

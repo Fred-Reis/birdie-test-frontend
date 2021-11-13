@@ -1,5 +1,6 @@
 import create from "zustand";
 import api from "../services/api";
+
 import { EventPropsDTO } from "../types/eventPropsDTO";
 
 interface StoreType {
@@ -10,7 +11,9 @@ interface StoreType {
 export const useStore = create<StoreType>((set) => ({
   events: [],
   setEvents: async (page: number) => {
-    const eventsData = await api.get(`events/${page || 0}`);
+    const eventsData = await api.get(
+      `events/${(page && page >= 0 && page) || 0}`
+    );
 
     set({ events: await eventsData.data });
     return eventsData;

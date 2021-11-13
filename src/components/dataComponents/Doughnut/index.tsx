@@ -1,11 +1,11 @@
 import { Container, CenterText } from "./styles";
 import { Doughnut } from "react-chartjs-2";
 
-import { EventPropsDTO } from "../../types/eventPropsDTO";
+import { EventPropsDTO } from "../../../types/eventPropsDTO";
 import {
   filterByArgument,
   filterByEvent_types,
-} from "../../utils/filterFunctions";
+} from "../../../utils/filterFunctions";
 
 const COLOR_ARRAY = [
   "#FF6633",

@@ -12,12 +12,12 @@ import {
   filterByArgument,
   filterByCaregiver,
   filterByEvent_types,
-} from "../../../utils/filterFunctions";
+} from "../../../../utils/filterFunctions";
 
-import checkIcon from "../../../assets/icons/check-bold.svg";
+import checkIcon from "../../../../assets/icons/check-bold.svg";
 
-import { EventPropsDTO } from "../../../types/eventPropsDTO";
-import { Button } from "../../Button";
+import { EventPropsDTO } from "../../../../types/eventPropsDTO";
+import { Button } from "../../../Button";
 
 export interface CheckBoxProps {
   checked: string;

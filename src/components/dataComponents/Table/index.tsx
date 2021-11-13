@@ -2,11 +2,11 @@ import { useState, useRef } from "react";
 
 import { Container, ListContainer } from "./styles";
 
-import { EventPropsDTO } from "../../types/eventPropsDTO";
+import { EventPropsDTO } from "../../../types/eventPropsDTO";
 
 import { TableRow } from "./TableRow";
 import { Filter } from "./Filter";
-import { Button } from "../Button";
+import { Button } from "../../Button";
 
 // function to sort events by timestamp
 const sortEvents = (arr: EventPropsDTO[], by: string) => {

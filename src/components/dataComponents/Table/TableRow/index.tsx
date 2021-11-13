@@ -1,8 +1,8 @@
 import { Itemcontainer, DateContainer } from "./styles";
 
-import { EventPropsDTO } from "../../../types/eventPropsDTO";
+import { EventPropsDTO } from "../../../../types/eventPropsDTO";
 
-import calendar from "../../../assets/icons/calendar.svg";
+import calendar from "../../../../assets/icons/calendar.svg";
 
 export const TableRow = (props: {
   item: EventPropsDTO;

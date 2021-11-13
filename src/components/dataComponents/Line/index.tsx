@@ -1,13 +1,13 @@
 import { Container } from "./styles";
 import { Line } from "react-chartjs-2";
 
-import { EventPropsDTO } from "../../types/eventPropsDTO";
+import { EventPropsDTO } from "../../../types/eventPropsDTO";
 
 import {
   filterByArgument,
   filterByTimestamp,
   sortDateObject,
-} from "../../utils/filterFunctions";
+} from "../../../utils/filterFunctions";
 
 export const LineChart = (props: { events: EventPropsDTO[] }) => {
   const { events } = props;
