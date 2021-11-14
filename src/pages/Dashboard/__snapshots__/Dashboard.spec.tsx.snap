@@ -1,0 +1,804 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard page renders correctly 1`] = `
+<main
+  className="sc-hGPBjI dLsIuF"
+>
+  <div
+    className="sc-dlVxhl hDZzoI"
+  >
+    <svg
+      aria-labelledby="bu30zgl-aria"
+      height={60}
+      id={null}
+      role="img"
+      style={Object {}}
+      styles={
+        Object {
+          "width": "100%",
+        }
+      }
+      viewBox="0 0 2200 60"
+      width={2200}
+    >
+      <title
+        id="bu30zgl-aria"
+      >
+        Loading...
+      </title>
+      <rect
+        clipPath="url(#bu30zgl-diff)"
+        height="100%"
+        role="presentation"
+        style={
+          Object {
+            "fill": "url(#bu30zgl-animated-diff)",
+          }
+        }
+        width="100%"
+        x="0"
+        y="0"
+      />
+      <defs>
+        <clipPath
+          id="bu30zgl-diff"
+        >
+          <rect
+            height="40"
+            rx="10"
+            ry="10"
+            width="140"
+            x="10"
+            y="15"
+          />
+          <rect
+            height="40"
+            rx="10"
+            ry="10"
+            width="140"
+            x="180"
+            y="15"
+          />
+          <rect
+            height="40"
+            rx="10"
+            ry="10"
+            width="400"
+            x="900"
+            y="15"
+          />
+          <rect
+            height="40"
+            rx="10"
+            ry="10"
+            width="250"
+            x="1900"
+            y="15"
+          />
+        </clipPath>
+        <linearGradient
+          id="bu30zgl-animated-diff"
+        >
+          <stop
+            offset="0%"
+            stopColor="#f0ebeb"
+            stopOpacity={1}
+          >
+            <animate
+              attributeName="offset"
+              dur="3s"
+              keyTimes="0; 0.25; 1"
+              repeatCount="indefinite"
+              values="-2; -2; 1"
+            />
+          </stop>
+          <stop
+            offset="50%"
+            stopColor="#bdbdbd"
+            stopOpacity={1}
+          >
+            <animate
+              attributeName="offset"
+              dur="3s"
+              keyTimes="0; 0.25; 1"
+              repeatCount="indefinite"
+              values="-1; -1; 2"
+            />
+          </stop>
+          <stop
+            offset="100%"
+            stopColor="#f0ebeb"
+            stopOpacity={1}
+          >
+            <animate
+              attributeName="offset"
+              dur="3s"
+              keyTimes="0; 0.25; 1"
+              repeatCount="indefinite"
+              values="0; 0; 3"
+            />
+          </stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "width": "100%",
+      }
+    }
+  >
+    <section
+      className="sc-fKVqWL jvgwUf"
+    >
+      <div>
+        <div
+          className="sc-bBHxTw jQoaxY"
+        >
+          <svg
+            aria-labelledby="aj77ado-aria"
+            height={450}
+            id={null}
+            role="img"
+            style={Object {}}
+            viewBox="0 0 400 450"
+            width={400}
+          >
+            <title
+              id="aj77ado-aria"
+            >
+              Loading...
+            </title>
+            <rect
+              clipPath="url(#aj77ado-diff)"
+              height="100%"
+              role="presentation"
+              style={
+                Object {
+                  "fill": "url(#aj77ado-animated-diff)",
+                }
+              }
+              width="100%"
+              x="0"
+              y="0"
+            />
+            <defs>
+              <clipPath
+                id="aj77ado-diff"
+              >
+                <circle
+                  cx="200"
+                  cy="177"
+                  r="128"
+                />
+                <rect
+                  height="40"
+                  rx="0"
+                  ry="0"
+                  width="340"
+                  x="20"
+                  y="343"
+                />
+                <rect
+                  height="40"
+                  rx="0"
+                  ry="0"
+                  width="340"
+                  x="20"
+                  y="403"
+                />
+              </clipPath>
+              <linearGradient
+                id="aj77ado-animated-diff"
+              >
+                <stop
+                  offset="0%"
+                  stopColor="#f0ebeb"
+                  stopOpacity={1}
+                >
+                  <animate
+                    attributeName="offset"
+                    dur="3s"
+                    keyTimes="0; 0.25; 1"
+                    repeatCount="indefinite"
+                    values="-2; -2; 1"
+                  />
+                </stop>
+                <stop
+                  offset="50%"
+                  stopColor="#bdbdbd"
+                  stopOpacity={1}
+                >
+                  <animate
+                    attributeName="offset"
+                    dur="3s"
+                    keyTimes="0; 0.25; 1"
+                    repeatCount="indefinite"
+                    values="-1; -1; 2"
+                  />
+                </stop>
+                <stop
+                  offset="100%"
+                  stopColor="#f0ebeb"
+                  stopOpacity={1}
+                >
+                  <animate
+                    attributeName="offset"
+                    dur="3s"
+                    keyTimes="0; 0.25; 1"
+                    repeatCount="indefinite"
+                    values="0; 0; 3"
+                  />
+                </stop>
+              </linearGradient>
+            </defs>
+          </svg>
+          <svg
+            aria-labelledby="lw1a8v-aria"
+            height={500}
+            id={null}
+            role="img"
+            style={Object {}}
+            styles={
+              Object {
+                "width": "100%",
+              }
+            }
+            viewBox="0 0 1000 500"
+            width={1000}
+          >
+            <title
+              id="lw1a8v-aria"
+            >
+              Loading...
+            </title>
+            <rect
+              clipPath="url(#lw1a8v-diff)"
+              height="100%"
+              role="presentation"
+              style={
+                Object {
+                  "fill": "url(#lw1a8v-animated-diff)",
+                }
+              }
+              width="100%"
+              x="0"
+              y="0"
+            />
+            <defs>
+              <clipPath
+                id="lw1a8v-diff"
+              >
+                <rect
+                  height="30"
+                  rx="5"
+                  ry="5"
+                  width="200"
+                  x="380"
+                  y="30"
+                />
+                <rect
+                  height="30"
+                  rx="5"
+                  ry="5"
+                  width="200"
+                  x="800"
+                  y="30"
+                />
+                <rect
+                  height="30"
+                  rx="5"
+                  ry="5"
+                  width="200"
+                  x="0"
+                  y="30"
+                />
+                <rect
+                  height="60"
+                  rx="5"
+                  ry="5"
+                  width="1000"
+                  x="0"
+                  y="90"
+                />
+                <rect
+                  height="60"
+                  rx="5"
+                  ry="5"
+                  width="1000"
+                  x="0"
+                  y="165"
+                />
+                <rect
+                  height="60"
+                  rx="5"
+                  ry="5"
+                  width="1000"
+                  x="0"
+                  y="239"
+                />
+                <rect
+                  height="60"
+                  rx="5"
+                  ry="5"
+                  width="1000"
+                  x="0"
+                  y="316"
+                />
+                <rect
+                  height="60"
+                  rx="5"
+                  ry="5"
+                  width="1000"
+                  x="0"
+                  y="396"
+                />
+              </clipPath>
+              <linearGradient
+                id="lw1a8v-animated-diff"
+              >
+                <stop
+                  offset="0%"
+                  stopColor="#f0ebeb"
+                  stopOpacity={1}
+                >
+                  <animate
+                    attributeName="offset"
+                    dur="3s"
+                    keyTimes="0; 0.25; 1"
+                    repeatCount="indefinite"
+                    values="-2; -2; 1"
+                  />
+                </stop>
+                <stop
+                  offset="50%"
+                  stopColor="#bdbdbd"
+                  stopOpacity={1}
+                >
+                  <animate
+                    attributeName="offset"
+                    dur="3s"
+                    keyTimes="0; 0.25; 1"
+                    repeatCount="indefinite"
+                    values="-1; -1; 2"
+                  />
+                </stop>
+                <stop
+                  offset="100%"
+                  stopColor="#f0ebeb"
+                  stopOpacity={1}
+                >
+                  <animate
+                    attributeName="offset"
+                    dur="3s"
+                    keyTimes="0; 0.25; 1"
+                    repeatCount="indefinite"
+                    values="0; 0; 3"
+                  />
+                </stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <svg
+        aria-labelledby="b2dkn9d-aria"
+        height={200}
+        id={null}
+        role="img"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+        viewBox="0 0 1800 200"
+        width={1800}
+      >
+        <title
+          id="b2dkn9d-aria"
+        >
+          Loading...
+        </title>
+        <rect
+          clipPath="url(#b2dkn9d-diff)"
+          height="100%"
+          role="presentation"
+          style={
+            Object {
+              "fill": "url(#b2dkn9d-animated-diff)",
+            }
+          }
+          width="100%"
+          x="0"
+          y="0"
+        />
+        <defs>
+          <clipPath
+            id="b2dkn9d-diff"
+          >
+            <rect
+              height="200"
+              rx="10"
+              ry="10"
+              width="1800"
+              x="0"
+              y="0"
+            />
+            <rect
+              height="50"
+              rx="10"
+              ry="10"
+              width="140"
+              x="10"
+              y="30"
+            />
+          </clipPath>
+          <linearGradient
+            id="b2dkn9d-animated-diff"
+          >
+            <stop
+              offset="0%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-2; -2; 1"
+              />
+            </stop>
+            <stop
+              offset="50%"
+              stopColor="#bdbdbd"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-1; -1; 2"
+              />
+            </stop>
+            <stop
+              offset="100%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="0; 0; 3"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </section>
+    <div
+      className="sc-kfPuZi deOCeh"
+    >
+      <svg
+        aria-labelledby="rboidl8-aria"
+        height={360}
+        id={null}
+        role="img"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+        viewBox="0 0 220 360"
+        width={220}
+      >
+        <title
+          id="rboidl8-aria"
+        >
+          Loading...
+        </title>
+        <rect
+          clipPath="url(#rboidl8-diff)"
+          height="100%"
+          role="presentation"
+          style={
+            Object {
+              "fill": "url(#rboidl8-animated-diff)",
+            }
+          }
+          width="100%"
+          x="0"
+          y="0"
+        />
+        <defs>
+          <clipPath
+            id="rboidl8-diff"
+          >
+            <rect
+              height="20"
+              rx="10"
+              ry="0"
+              width="100"
+              x="48"
+              y="60"
+            />
+            <circle
+              cx="95"
+              cy="150"
+              r="40"
+            />
+            <rect
+              height="30"
+              rx="10"
+              ry="0"
+              width="200"
+              x="0"
+              y="229"
+            />
+            <rect
+              height="30"
+              rx="10"
+              ry="0"
+              width="200"
+              x="0"
+              y="272"
+            />
+            <rect
+              height="30"
+              rx="10"
+              ry="0"
+              width="200"
+              x="0"
+              y="319"
+            />
+          </clipPath>
+          <linearGradient
+            id="rboidl8-animated-diff"
+          >
+            <stop
+              offset="0%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-2; -2; 1"
+              />
+            </stop>
+            <stop
+              offset="50%"
+              stopColor="#bdbdbd"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-1; -1; 2"
+              />
+            </stop>
+            <stop
+              offset="100%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="0; 0; 3"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg
+        aria-labelledby="1bnh3jz5n-aria"
+        height={100}
+        id={null}
+        role="img"
+        style={
+          Object {
+            "margin": "auto",
+            "width": "100%",
+          }
+        }
+        viewBox="0 0 220 100"
+        width={220}
+      >
+        <title
+          id="1bnh3jz5n-aria"
+        >
+          Loading...
+        </title>
+        <rect
+          clipPath="url(#1bnh3jz5n-diff)"
+          height="100%"
+          role="presentation"
+          style={
+            Object {
+              "fill": "url(#1bnh3jz5n-animated-diff)",
+            }
+          }
+          width="100%"
+          x="0"
+          y="0"
+        />
+        <defs>
+          <clipPath
+            id="1bnh3jz5n-diff"
+          >
+            <rect
+              height="30"
+              rx="0"
+              ry="0"
+              width="200"
+              x="0"
+              y="15"
+            />
+            <rect
+              height="30"
+              rx="0"
+              ry="0"
+              width="200"
+              x="0"
+              y="64"
+            />
+          </clipPath>
+          <linearGradient
+            id="1bnh3jz5n-animated-diff"
+          >
+            <stop
+              offset="0%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-2; -2; 1"
+              />
+            </stop>
+            <stop
+              offset="50%"
+              stopColor="#bdbdbd"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-1; -1; 2"
+              />
+            </stop>
+            <stop
+              offset="100%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="0; 0; 3"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg
+        aria-labelledby="gkdmvy-aria"
+        height={100}
+        id={null}
+        role="img"
+        style={
+          Object {
+            "margin": "auto",
+            "width": "100%",
+          }
+        }
+        viewBox="0 0 220 100"
+        width={220}
+      >
+        <title
+          id="gkdmvy-aria"
+        >
+          Loading...
+        </title>
+        <rect
+          clipPath="url(#gkdmvy-diff)"
+          height="100%"
+          role="presentation"
+          style={
+            Object {
+              "fill": "url(#gkdmvy-animated-diff)",
+            }
+          }
+          width="100%"
+          x="0"
+          y="0"
+        />
+        <defs>
+          <clipPath
+            id="gkdmvy-diff"
+          >
+            <rect
+              height="30"
+              rx="0"
+              ry="0"
+              width="200"
+              x="0"
+              y="15"
+            />
+            <rect
+              height="30"
+              rx="0"
+              ry="0"
+              width="200"
+              x="0"
+              y="64"
+            />
+          </clipPath>
+          <linearGradient
+            id="gkdmvy-animated-diff"
+          >
+            <stop
+              offset="0%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-2; -2; 1"
+              />
+            </stop>
+            <stop
+              offset="50%"
+              stopColor="#bdbdbd"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-1; -1; 2"
+              />
+            </stop>
+            <stop
+              offset="100%"
+              stopColor="#f0ebeb"
+              stopOpacity={1}
+            >
+              <animate
+                attributeName="offset"
+                dur="3s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="0; 0; 3"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</main>
+`;
