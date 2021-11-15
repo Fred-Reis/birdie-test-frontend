@@ -19,6 +19,10 @@ export const Container = styled.ul`
     right: 0;
     margin-left: 0;
     margin-right: 0;
+
+    @media (max-width: 1300px) {
+      display: none;
+    }
   }
 
   > div {

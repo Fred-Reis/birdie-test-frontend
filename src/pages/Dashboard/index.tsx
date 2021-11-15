@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import {
   Container,
   Header,
-  Content,
+  ContentContainer,
+  DataContent,
   InfoCardsContainer,
   TopHalfDataContainer,
 } from "./styles";
@@ -26,6 +27,8 @@ import {
 } from "../../utils/filterFunctions";
 
 import { EventPropsDTO } from "../../types/eventPropsDTO";
+
+import logo from "../../assets/logo.png";
 
 export const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -120,15 +123,18 @@ export const Dashboard = () => {
                 }}
               ></Button>
             </div>
-            <h1>Care Recipient Dashboard</h1>
+            <span>
+              <img src={logo} alt="logo" />
+              <h1>Care Recipient Dashboard</h1>
+            </span>
 
             <h2>
               Period: {datesSorted[0]} - {datesSorted[datesSorted?.length - 1]}
             </h2>
           </Header>
 
-          <div style={{ display: "flex", width: "100%" }}>
-            <Content>
+          <ContentContainer>
+            <DataContent>
               <div>
                 <TopHalfDataContainer>
                   <DoughnutChart events={events} />
@@ -138,21 +144,24 @@ export const Dashboard = () => {
                 </TopHalfDataContainer>
               </div>
               <LineChart events={events} />
-            </Content>
+            </DataContent>
             <InfoCardsContainer>
               <ProfileCard care_recipient_id={recipient_id} user={user} />
-              <InfoCards
-                type="events"
-                event_type={mostRecurrentEvent[0]}
-                value={mostRecurrentEvent[1]?.length}
-              />
 
-              <InfoCards
-                type="alerts"
-                value={eventsObject["alert_raised"]?.length}
-              />
+              <div>
+                <InfoCards
+                  type="events"
+                  event_type={mostRecurrentEvent[0]}
+                  value={mostRecurrentEvent[1]?.length}
+                />
+
+                <InfoCards
+                  type="alerts"
+                  value={eventsObject["alert_raised"]?.length}
+                />
+              </div>
             </InfoCardsContainer>
-          </div>
+          </ContentContainer>
         </Container>
       )}
     </>

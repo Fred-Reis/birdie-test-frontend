@@ -12,7 +12,8 @@ export const DashboardHeaderSkeleton = (props: any) => (
   >
     <rect x="10" y="15" rx="10" ry="10" width="140" height="40" />
     <rect x="180" y="15" rx="10" ry="10" width="140" height="40" />
-    <rect x="900" y="15" rx="10" ry="10" width="400" height="40" />
+    <circle cx="900" cy="30" r="30" />
+    <rect x="990" y="15" rx="10" ry="10" width="300" height="40" />
     <rect x="1900" y="15" rx="10" ry="10" width="250" height="40" />
   </ContentLoader>
 );
