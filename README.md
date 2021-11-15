@@ -32,6 +32,16 @@
 <br/>
 
 <h4 align="center">
+How about taking a look at the  
+  <a href="https://github.com/Fred-Reis/birdie-test-backend">
+   back end API project
+  </a>
+  for this project meanwhile
+</h4>
+
+<br/>
+
+<h4 align="center">
 😃  <strong>BE HAPPY!</strong>
 </h4>
 
