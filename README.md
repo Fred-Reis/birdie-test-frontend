@@ -163,6 +163,7 @@ Some of technologies and libraries used at this project:
 - [**zustand**](https://github.com/pmndrs/zustand) => To manage the global state for data;
 - [**axios**](https://axios-http.com/docs/intro);
 - [**Styled Components**](https://styled-components.com/);
+- [**React Content Loader**](https://github.com/danilowoz/react-content-loader) => To create Skeleton svg to be shown when reloading;
 - [**react chartjs 2**](https://github.com/reactchartjs/react-chartjs-2);
 
 <br/>
