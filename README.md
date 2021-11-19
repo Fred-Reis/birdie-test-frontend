@@ -173,11 +173,11 @@ Some of technologies and libraries used at this project:
 
 ## 🗺 Roadmap
 
-[] Allow search by `care_recipient_id`  
-[] Improvements at responsivities from charts an  
-[] Mobile layout  
-[] Allow pagination by month  
-[] Filter by date
+[ ] Allow search by `care_recipient_id`  
+[ ] Improvements at responsivities from charts an  
+[ ] Mobile layout  
+[ ] Allow pagination by month  
+[ ] Filter by date
 
 <br/>
 
